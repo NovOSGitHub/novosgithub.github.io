@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 1210 Calc </title>
+</head>
+
+<body>
+
+<p>
+    <h2>MATH 1210 Grade Calculator (Fall 2020)</h2>
+    <h3>Please Enter Your Grade (out of 100) For Each Assignment</h3>
+    <body>Updated 9-28-2020: This grade calculator was created for MATH 1210 at UVA for the Fall 2020
+    Semester. <br>
+    It requires a grade in all categories as it is based on the point value (not the
+    percentage), so if you don't know your grade exactly, just guess. <br><br>
+    If you have any suggestions, other features you'd like to see, or if you just enjoyed using this, feel free to email me at lrs5jy@virginia.edu :)</body>
+    <TABLE BORDER=2 CELLSPACING=2 CELLPADDING=2>
+
+    <tr>
+    <td>Assignment</td>
+    <td>Points Possible</td>
+    <td>Grade %</td>
+    </tr>
+
+    <tr>
+    <td>Class-Prep</td>
+    <td>10</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');" id="cp" size=2 value=""></td>
+    </tr>
+
+    <tr>
+    <td>Piazza</td>
+    <td>8</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');"id="piazza" size=2 value=""></td>
+    </tr>
+
+    <tr>
+    <td>In-Class Polling</td>
+    <td>10</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');"id="polls" size=2 value=""></td>
+    </tr>
+
+    <tr>
+    <td>WebAssign Homework</td>
+    <td>10</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');"id="hw" size=2 value=""></td>
+    </tr>
+
+        <tr>
+    <td>Collected Homework</td>
+    <td>10</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');"id="cw" size=2 value=""></td>
+    </tr>
+
+        <tr>
+    <td>Quiz 1</td>
+    <td>4</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');" id="q1" size=2 value=""></td>
+    </tr>
+
+        <tr>
+    <td>Quiz 2</td>
+    <td>4</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');" id="q2" size=2 value=""></td>
+    </tr>
+
+        <tr>
+    <td>Quiz 3</td>
+    <td>4</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');"id="q3" size=2 value=""></td>
+    </tr>
+
+        <tr>
+    <td>Quiz 4</td>
+    <td>4</td>
+    <td><input type="number"min="0" max="100" step="0.01" oninput="validity.valid||(value='');" id="q4" size=2 value=""></td>
+    </tr>
+
+        <tr>
+    <td>Exam 1</td>
+    <td>12</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');"id="e1" size=2 value=""></td>
+    </tr>
+
+        <tr>
+    <td>Exam 2</td>
+    <td>12</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');"id="e2" size=2 value=""></td>
+    </tr>
+
+            <tr>
+    <td>Final Exam</td>
+    <td>12</td>
+    <td><input type="number" min="0" max="100" step="0.01" oninput="validity.valid||(value='');" id="final" size=2 value=""></td>
+    </tr>
+
+    <br><br>
+</p>
+    <input type="button" value="Calculate Your Grade"
+        onclick="calculator()">
+
+    <hr>
+    <div id="outputDiv" style="height: 50px; width: 100%;"></div>
+
+    <script type="text/javascript">
+
+        function calculator()
+        {
+            var g1=parseFloat(document.getElementById('cp').value*0.1);
+            var g2=parseFloat(document.getElementById('piazza').value*0.08);
+            var g3=parseFloat(document.getElementById('polls').value*0.1);
+            var g4=parseFloat(document.getElementById('hw').value*0.1);
+            var g5=parseFloat(document.getElementById('cw').value*0.1);
+            var g6=parseFloat(document.getElementById('q1').value*0.04);
+            var g7=parseFloat(document.getElementById('q2').value*0.04);
+            var g8=parseFloat(document.getElementById('q3').value*0.04);
+            var g9=parseFloat(document.getElementById('q4').value*0.04);
+            var g10=parseFloat(document.getElementById('e1').value*0.12);
+            var g11=parseFloat(document.getElementById('e2').value*0.12);
+            var g12=parseFloat(document.getElementById('final').value*0.12);
+            var total=g1+g2+g3+g4+g5+g6+g7+g8+g9+g10+g11+g12;
+
+            var display=document.getElementById('outputDiv');
+
+            display.innerHTML='Your Final Grade Is: ' +total;
+        }
+    </script>
